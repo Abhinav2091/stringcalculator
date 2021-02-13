@@ -36,4 +36,11 @@ class StringcalculatorApplicationTests {
 
 	}
 
+	@Test
+	void forDelimitersString()
+	{  int result=stringCalculator.Add("//;\n1;2");
+		Assert.assertEquals(result,3);
+
+	}
+
 }
