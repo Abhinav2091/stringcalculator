@@ -12,8 +12,9 @@ public class StringCalculator {
         if(!StringUtils.hasLength(numbers))
             result=0;
         else{
-            if(numbers.contains("\\n"))
-                numbers=numbers.replaceAll("\\n",",");
+                numbers = numbers.replaceAll("\n", ",");
+
+            System.out.println(numbers);
             String[] numbersArray= numbers.split(",");
             for(String num:numbersArray)
             {

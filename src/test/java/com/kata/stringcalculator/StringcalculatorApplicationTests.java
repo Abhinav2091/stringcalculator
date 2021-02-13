@@ -29,4 +29,11 @@ class StringcalculatorApplicationTests {
 
 	}
 
+	@Test
+	void forMoreThanNewLineInString()
+	{  int result=stringCalculator.Add("2\n3,4");
+		Assert.assertEquals(result,9);
+
+	}
+
 }
