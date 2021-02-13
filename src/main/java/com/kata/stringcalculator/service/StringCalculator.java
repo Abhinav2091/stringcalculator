@@ -8,6 +8,8 @@ import java.util.ArrayList;
 @Service
 public class StringCalculator {
 
+    public static int count = 0;
+
     public int Add(String numbers) throws Exception {
         List<String> negativeNumbers = new ArrayList<>();
         String delimiter=",";
@@ -26,6 +28,8 @@ public class StringCalculator {
                 System.out.println(numbers);
                 String[] numbersArray = numbers.split(delimiter);
                 for (String num : numbersArray) {
+                    if(Integer.parseInt(num)>1000)
+                        num ="0";
                     if(Integer.parseInt(num)<0)
                     {
                         negativeNumbers.add(num);
@@ -38,5 +42,10 @@ public class StringCalculator {
             throw new Exception("negatives not allowed -"+negativeNumbers);
         else
         return result;
+    }
+
+    public int GetCalledCount()
+    {
+        return count;
     }
 }
