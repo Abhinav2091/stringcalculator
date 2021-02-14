@@ -65,13 +65,30 @@ class StringcalculatorApplicationTests {
 	}
 
 	@Test
-	@Order(9)
+	@Order(7)
 	public void forNumberGreaterThanThousand() throws Exception {
-		int result=stringCalculator.Add("2,3,4,1001");
+		int result=stringCalculator.Add("2,3,4,10001");
 		Assert.assertEquals(result,9);	}
 
 	@Test
 	@Order(8)
+	public void forSingleDelimiter() throws Exception {
+		int result=stringCalculator.Add("//[***]\n1***2***3");
+		Assert.assertEquals(result,6);	}
+	@Test
+	@Order(9)
+	public void forMultipleDelimiter() throws Exception {
+		int result=stringCalculator.Add("//[*][%]\n1*2%3");
+		Assert.assertEquals(result,6);	}
+
+	@Test
+	@Order(10)
+	public void forMultipleDelimiterOfAnyLength() throws Exception {
+		int result=stringCalculator.Add("//[**][%%]\n1**2%%3");
+		Assert.assertEquals(result,6);	}
+
+	@Test
+	@Order(11)
 	public void forMethodCount()
 	{
 		LOGGER.info("No of time Add method invoked is {}",stringCalculator.GetCalledCount());
