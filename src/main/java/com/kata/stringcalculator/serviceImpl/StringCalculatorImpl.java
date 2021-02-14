@@ -1,15 +1,17 @@
-package com.kata.stringcalculator.service;
+package com.kata.stringcalculator.serviceImpl;
 
+import com.kata.stringcalculator.service.StringCalculatorService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
 
 @Service
-public class StringCalculator {
+public class StringCalculatorImpl  implements StringCalculatorService {
 
     public static int count = 0;
 
+    @Overridep
     public int Add(String numbers) throws Exception {
         List<String> negativeNumbers = new ArrayList<>();
 
@@ -53,6 +55,7 @@ public class StringCalculator {
         return result;
     }
 
+    @Override
     public int GetCalledCount()
     {
         return count;

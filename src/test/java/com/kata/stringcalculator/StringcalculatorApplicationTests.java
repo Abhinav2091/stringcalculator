@@ -1,6 +1,7 @@
 package com.kata.stringcalculator;
 
-import com.kata.stringcalculator.service.StringCalculator;
+import com.kata.stringcalculator.service.StringCalculatorService;
+import com.kata.stringcalculator.serviceImpl.StringCalculatorImpl;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ class StringcalculatorApplicationTests {
 	private static  final Logger LOGGER = LoggerFactory.getLogger(StringcalculatorApplicationTests.class);
 
 	@Autowired
-	private StringCalculator stringCalculator;
+	private StringCalculatorService stringCalculator;
 
 	@Test
 	@Order(1)
